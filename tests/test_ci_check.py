@@ -1,12 +1,14 @@
+import json
 import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 TOOLS = Path(__file__).resolve().parents[1] / "tools"
 sys.path.insert(0, str(TOOLS))
 
-from ci_check import CIError, _test_counts, prepare_output_root, strict_tests_accepted
+from ci_check import CIError, _test_counts, prepare_output_root, run, strict_tests_accepted
 
 
 class StrictTestAcceptanceTests(unittest.TestCase):
@@ -103,6 +105,42 @@ class OutputRootTests(unittest.TestCase):
             empty = Path(temporary) / "empty"
             empty.mkdir()
             self.assertEqual(prepare_output_root(empty), empty)
+
+
+class RunSummaryTests(unittest.TestCase):
+    def test_normal_discovery_without_error_writes_summary(self):
+        def pass_test(self):
+            pass
+
+        case_type = type("SyntheticPassingCase", (unittest.TestCase,), {"test_generated": pass_test})
+        result = unittest.TestResult()
+        case_type("test_generated").run(result)
+
+        with tempfile.TemporaryDirectory() as temporary:
+            output_root = Path(temporary) / "evidence"
+            output_root.mkdir()
+            with (
+                patch("ci_check._git_head", return_value=None),
+                patch("ci_check._environment_preflight", return_value=({"status": "passed", "git_head": None}, [])),
+                patch("ci_check._run_tests", return_value=("Synthetic test passed.\n", result, None)),
+                patch("ci_check._run_demo", return_value={"status": "passed"}),
+            ):
+                self.assertEqual(run(output_root, Path("unused-font-config")), 0)
+
+            summary = json.loads((output_root / "summary.json").read_text(encoding="utf-8"))
+            self.assertEqual(summary["status"], "passed")
+            self.assertEqual(
+                summary["tests"],
+                {
+                    "discovered": 1,
+                    "passed": 1,
+                    "failures": 0,
+                    "errors": 0,
+                    "skipped": 0,
+                    "expected_failures": 0,
+                    "unexpected_successes": 0,
+                },
+            )
 
 
 if __name__ == "__main__":

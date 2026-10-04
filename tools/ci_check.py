@@ -326,7 +326,7 @@ def run(output_root: Path, font_config_path: Path) -> int:
     _write_json_new(output_root / "environment.json", environment)
 
     tests_log, test_result, discovery_error = _run_tests()
-    test_counts = _test_counts(test_result, discovery_error)
+    test_counts = _test_counts(test_result, bool(discovery_error))
     if discovery_error:
         failures.append("test_discovery_failed")
     if not strict_tests_accepted(test_result):
