@@ -23,9 +23,9 @@
 
 数论3图／8大题／12条目／14节点，五册分页4／4／2／4／4。新 reference/profile 使用独立 namespace，沿用已有契约，核心代码未变。所选页面全部阅读，完整题干保存在台账及索引；印刷页码与精确区域未知，保留整图引用，不宣称整章完整。
 
-先前两张候选计算照片经题干核对是开发内容重拍，虽哈希不同也拒绝计为保留集。独立原图复核发现某个上标初稿转录错误，主代理回看确认后创建 v2；缺字表达也通过受支持形式修正，没有跳过字体门禁。12原题及12新复测条目精确核算，全部18页视觉核对；未见可归属手写答案，评价保持未知／待测。
+先前两张候选计算照片经题干核对是开发内容重拍，虽哈希不同也拒绝计为保留集。某轮复核把正确初稿的上标误读并错误订正，后续独立 verifier 按原始像素局部确认后创建 v3，并追加撤销 v2 签收记录；缺字表达也通过受支持形式修正，没有跳过字体门禁。12原题及12新复测条目精确核算，全部18页视觉核对；未见可归属手写答案，评价保持未知／待测。
 
-当前私有入口是 data/holdout-number-theory-20261004/run-v2/run.json、packet-v2.json、reading-ledger-v2.json、review-v2.json；无后缀草稿仅保留诊断。run 为 machine_verified，内容为 draft，代理审核 pass 不替代家庭批准或 Word 实开。源码分发及家庭成果 ZIP 位于忽略的 artifacts/／data/，不进入 Git。
+当前私有入口是 data/holdout-number-theory-20261004/run-v3/run.json、packet-v3.json、reading-ledger-v3.json、review-v3.json；无后缀初稿及被拒绝的 v2 保留诊断；v2 的旧 pass 已明确撤销，不能用于发布。run 为 machine_verified，内容为 draft，代理审核 pass 不替代家庭批准或 Word 实开。源码分发及家庭成果 ZIP 位于忽略的 artifacts/／data/，不进入 Git。
 
 ## 从保存状态继续
 

@@ -79,4 +79,4 @@ SWF-11 保留首次实现提交，不把公开首发当作必须重写历史。�
 
 SWF-12 的 CI 使用固定 action commit、只读仓库权限和明确的 Python／字体／PDF 工具；只生成和上传本任务的匿名证据，不遍历已有家庭工作目录。验证器必须拒绝零测试、跳过和失败，不把缺字体导致的 skip 当作通过。主代理在不挂载宿主资料的独立容器中从 public GitHub 匿名 clone，创建无 system-site-packages 的新 venv，并记录来源 SHA、依赖和实际结果。正式 GitHub Actions 的结论通过对应 run 核对；本地配置或容器成功不能替代该远端运行结果。实现与本地验收先 review，再统一 push。
 
-SWF-13／14 的实际过程、同题重拍拒绝与新会话证据见 [本轮验收](session-and-holdout-acceptance.md)。用户给定源目录后只读取并复制选定原图到私有工作区；数论使用独立 namespace，没有改业务系统。三张选定照片不承诺整章完整性；无可确认作答时保持未知。原题上标转录差异经回看原图订正，旧稿保留。两端 Word SOP 见 [客户端验收](word-client-acceptance.md)，实开结果、家庭复测与生产接入仍按实际证据回填。
+SWF-13／14 的实际过程、同题重拍拒绝与新会话证据见 [本轮验收](session-and-holdout-acceptance.md)。用户给定源目录后只读取并复制选定原图到私有工作区；数论使用独立 namespace，没有改业务系统。三张选定照片不承诺整章完整性；无可确认作答时保持未知。某轮上标复核误读导致错误订正，独立 verifier 局部原图审查发现后生成 v3 并撤销 v2 签收，全部旧记录保留。两端 Word SOP 见 [客户端验收](word-client-acceptance.md)，实开结果、家庭复测与生产接入仍按实际证据回填。
