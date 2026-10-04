@@ -33,4 +33,6 @@ GitHub 公开仓库承载可复用 SOP skill 和源码。本地家庭输入与�
 
 ## 状态与证据
 
-仓库创建和 origin 已实际确认；独立 review 及最终首发核验按上述顺序执行。review 结论保存于后续审查记录；最终远端 SHA／可见性 receipt 保存于忽略的 `data/github-publication.local.json`。从后续会话继续时，直接核对 GitHub main 与本地 git 状态，不依赖旧聊天或尚未执行的计划。
+仓库创建和 origin 已实际确认；文档提交为 `3198db0`，独立 review 已通过，详见[审查报告](review-20261004.md)。该报告覆盖首次实现及完整两项提交，不改变家庭与生产能力未验状态。审查之后仅补充报告和文档状态，由主代理复核差异、实现一致及完整历史，再统一 push。
+
+最终远端 SHA／可见性 receipt 保存于忽略的 `data/github-publication.local.json`；公开首发记录直接查看 [main 提交历史](https://github.com/dff652/study-material-workflow/commits/main/)。从后续会话继续时，核对 GitHub main 与本地 git 状态，不依赖旧聊天或尚未执行的计划。

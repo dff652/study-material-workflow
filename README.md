@@ -58,7 +58,8 @@ SCRIPTS="$PWD/skills/study-material-workflow/scripts"
 - [实施方案](docs/implementation-plan.md)、[验收方案](docs/acceptance-plan.md)：职责和签收要求。
 - [工作流契约](docs/workflow-contract.md)、[Luna6 交接](docs/luna6-task-brief.md)、[打印组件来源](docs/print-component-provenance.json)。
 - [最终验收记录](docs/verification-20261004.md)：41 项测试、16 个诊断答案复算及 69 页视觉复核；私有输入／成果位于忽略的 data/ 和 artifacts/。
+- [首次公开提交独立审查](docs/review-20261004.md)：完整待上传实现和历史审查 PASS；独立重跑 41 项测试通过。
 
 测试命令：`PYTHONDONTWRITEBYTECODE=1 "$PYTHON" -m unittest discover -s tests -v`。公开测试仅含合成来源；家庭照片、档案、完整历史内容和凭据不进入 Git 或通用 skill 包。真实 OCR、手机／家庭复测、数据库迁移、生产 NAS 发布和部署需要对应范围和实际证据。
 
-本地首次实现提交为 `2bac24a`。本次先更新文档和提交，再独立 review，修正并记录结果后统一 push；后续提交、发布与部署仍按对应任务授权执行。
+本地首次实现提交为 `2bac24a`。首发文档已更新并提交，独立 review 通过；main 是本次统一首发分支，实际提交可从 GitHub 历史查看。后续提交、发布与部署仍按对应任务授权执行。

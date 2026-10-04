@@ -15,7 +15,7 @@
 | SWF-08 | Workbench 显式接入 | 主代理 | 纯导出实现并测试；完整几何未知映射拒绝；数据库未接入 |
 | SWF-09 | 版本发布与失败恢复 | 主代理 | 本地发布／重放／冲突／索引修复通过；生产 SSH 未验 |
 | SWF-10 | 模型／OCR 对比及分发 | 主代理 | 文件比较与源码分发包完成；真实调用、费用和学习效果未验 |
-| SWF-11 | GitHub public 仓库、文档提交、独立 review 与统一 push | SWF-07；主代理＋只读 verifier | 仓库已创建，main 已确定；文档提交后审查，通过后统一首发 |
+| SWF-11 | GitHub public 仓库、文档提交、独立 review 与统一 push | SWF-07；主代理＋只读 verifier | 仓库已创建，文档已提交，独立 review PASS；main 统一首发，远端 SHA 按首发记录核验 |
 
 ## SWF-01：共享契约与基线
 

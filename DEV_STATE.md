@@ -8,7 +8,8 @@
 
 ## 已完成与基线
 
-- 独立 Git 项目，初始开发分支 `codex/workflow-v1` 已改名为默认分支 `main`，没有重写 `2bac24a`。public 仓库为 `dff652/study-material-workflow`，origin 的 fetch／push URL 均为 `https://github.com/dff652/study-material-workflow.git`。首次上传安排在独立审查通过之后。
+- 独立 Git 项目，初始开发分支 `codex/workflow-v1` 已改名为默认分支 `main`，没有重写 `2bac24a`。public 仓库为 `dff652/study-material-workflow`，origin 的 fetch／push URL 均为 `https://github.com/dff652/study-material-workflow.git`。首发文档提交为 `3198db0`，独立审查已 PASS，main 按本次授权统一首发。
+- 独立 verifier 重跑 41 项测试（16.922 秒，无跳过），检查 33 个 Python 文件、全部两个可达提交／69 个唯一 blob，三套成果重新验证通过。报告见 [review-20261004](docs/review-20261004.md)；最终远端 SHA 与可见性以本地 receipt 和 GitHub main 核验，不从本地提交推断 push 成功。
 - GitHub 源码公开与资料／应用部署分别记录；本次未安装依赖、启用模型 API、改生产 NAS、迁移数据库或变更服务。
 - 输入为会话计算／几何五册、SWB-SOP-IMG-001 v1.0 四册流程资料及现有纯打印源码；来源摘要和真实资料只在忽略的 data/ 内。
 - SWF-00～07 的离线实现和主代理验收完成；一个 luna6-worker 分两轮负责来源／索引及 render／verify，主代理审查全部实际修改，负责共享契约、知识边界、集成、恢复及最终检查。
