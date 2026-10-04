@@ -1,0 +1,192 @@
+{
+  "schema_version": "swf.packet.v1",
+  "batch_id": "anonymous-example",
+  "sources_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "catalog_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "documents": [
+    {
+      "schema_version": "swf.print.v1",
+      "document_id": "example-01",
+      "title": "知识总结示例",
+      "purpose": "knowledge_summary",
+      "pages": [
+        [
+          {
+            "kind": "title",
+            "content": "知识总结示例",
+            "role": "title"
+          },
+          {
+            "kind": "p",
+            "content": "将分数通分后相加，检查分母是否非零。",
+            "role": "body"
+          },
+          {
+            "kind": "math",
+            "content": [
+              "r",
+              [
+                "f",
+                [
+                  "t",
+                  "1"
+                ],
+                [
+                  "t",
+                  "2"
+                ]
+              ],
+              [
+                "t",
+                " + "
+              ],
+              [
+                "f",
+                [
+                  "t",
+                  "1"
+                ],
+                [
+                  "t",
+                  "6"
+                ]
+              ],
+              [
+                "t",
+                " = "
+              ],
+              [
+                "f",
+                [
+                  "t",
+                  "2"
+                ],
+                [
+                  "t",
+                  "3"
+                ]
+              ]
+            ],
+            "role": "method"
+          }
+        ]
+      ],
+      "source": {
+        "source_id": "anonymous-example",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "state": "draft",
+        "revision_id": null
+      }
+    },
+    {
+      "schema_version": "swf.print.v1",
+      "document_id": "example-02",
+      "title": "分类索引示例",
+      "purpose": "classification_index",
+      "pages": [
+        [
+          {
+            "kind": "title",
+            "content": "分类索引示例",
+            "role": "title"
+          },
+          {
+            "kind": "p",
+            "content": "本示例属于分数计算；分类并不代表孩子掌握。",
+            "role": "body"
+          }
+        ]
+      ],
+      "source": {
+        "source_id": "anonymous-example",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "state": "draft",
+        "revision_id": null
+      }
+    },
+    {
+      "schema_version": "swf.print.v1",
+      "document_id": "example-03",
+      "title": "证据记录示例",
+      "purpose": "evidence_report",
+      "pages": [
+        [
+          {
+            "kind": "title",
+            "content": "证据记录示例",
+            "role": "title"
+          },
+          {
+            "kind": "p",
+            "content": "当前没有明确作者、日期或独立作答证据，保留待测。",
+            "role": "body"
+          }
+        ]
+      ],
+      "source": {
+        "source_id": "anonymous-example",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "state": "draft",
+        "revision_id": null
+      }
+    },
+    {
+      "schema_version": "swf.print.v1",
+      "document_id": "example-04",
+      "title": "独立复测示例",
+      "purpose": "independent_practice",
+      "pages": [
+        [
+          {
+            "kind": "title",
+            "content": "独立复测示例",
+            "role": "title"
+          },
+          {
+            "kind": "p",
+            "content": "计算 1/2 + 1/6，写出过程。",
+            "role": "question"
+          },
+          {
+            "kind": "space",
+            "content": 100,
+            "role": "answer_space"
+          }
+        ]
+      ],
+      "source": {
+        "source_id": "anonymous-example",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "state": "draft",
+        "revision_id": null
+      }
+    },
+    {
+      "schema_version": "swf.print.v1",
+      "document_id": "example-05",
+      "title": "家长答案示例",
+      "purpose": "parent_answers",
+      "pages": [
+        [
+          {
+            "kind": "title",
+            "content": "家长答案示例",
+            "role": "title"
+          },
+          {
+            "kind": "p",
+            "content": "答案为 2/3；观察是否找到共同分母并保留原尝试。",
+            "role": "body"
+          }
+        ]
+      ],
+      "source": {
+        "source_id": "anonymous-example",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "state": "draft",
+        "revision_id": null
+      }
+    }
+  ],
+  "omitted_purposes": []
+}

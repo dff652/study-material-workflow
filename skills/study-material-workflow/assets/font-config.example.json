@@ -1,0 +1,6 @@
+{
+  "regular_source": "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+  "bold_source": "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
+  "math_source": "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf",
+  "face_index": 2
+}

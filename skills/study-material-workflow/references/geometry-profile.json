@@ -1,0 +1,32 @@
+{
+  "profile_id": "geometry-v1",
+  "namespace": "geometry",
+  "classification_revision": "geometry-six-methods-v1",
+  "books": [
+    "J3",
+    "J4",
+    "W5",
+    "W6",
+    "W7",
+    "W8",
+    "W9"
+  ],
+  "photo_separator": "+",
+  "allow_sides": true,
+  "groups": {
+    "1": "等积与一半",
+    "2": "等高等底",
+    "3": "风筝蝴蝶",
+    "4": "鸟头燕尾",
+    "5": "金字塔沙漏",
+    "6": "勾股弦图"
+  },
+  "aux_aliases": {
+    "一半模型": 1,
+    "等积变形": 1,
+    "等高比例": 2,
+    "鸟头": 4,
+    "金字塔": 5,
+    "勾股关系": 6
+  }
+}

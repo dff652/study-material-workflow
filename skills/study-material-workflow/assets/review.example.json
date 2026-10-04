@@ -1,0 +1,9 @@
+{
+  "packet_sha256": "replace-with-packet-sha256-excluding-review",
+  "recipe_sha256": "replace-with-render-manifest-recipe-sha256",
+  "content": {"status": "not_tested", "reviewer": null, "notes": ""},
+  "math": {"status": "not_tested", "reviewer": null, "notes": ""},
+  "independent": {"status": "not_tested", "reviewer": null, "notes": ""},
+  "pdf_visual": {"status": "not_tested", "reviewer": null, "notes": ""},
+  "word_client": {"status": "not_tested", "reviewer": null, "notes": "No actual office client has opened these files yet."}
+}

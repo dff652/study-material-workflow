@@ -1,0 +1,11 @@
+# 签收
+
+verify 负责文件集合、输入依赖与哈希、PDF页数／页脚／缺字／越界、Word XML／公式／图、ZIP、字体资源。它不自动批准数学、笔迹归属或学习判断。
+
+检查全部 PDF 页和图中字母，确认书写留白、图和表格、公式与条件可读。对所有新编复测答案独立复算；回到原图核对知识、跨页、勘误。Word 结构通过与 Microsoft Word／其他实际客户端实开分开记录。
+
+使用 review.json 精确绑定 packet 和最终 recipe 摘要：content、math、independent、pdf_visual 必须有实际审核人与 pass，word_client 可为 not_tested 并说明打印以 PDF 为准。无独立卷时 independent 可记 not_applicable，说明范围。没有审核仍可交付明确草稿，不能发布成已验版本。assets/review.example.json 是未验模板，不能原样批准。
+
+数量口径分原图、大题、展开条目、父容器节点；每个 photo_ref 能定位字节。理论页无题号不等于可不读。作者未知、课堂、提示后完成和独立作答分别保存；来源或题干修订不覆盖历史。
+
+行为检查：从新小批次执行，不只复现熟悉的案例；模拟中断、源变化、输出篡改和冲突。not_tested 不等于 pass。成果 ZIP 不等于数据库／文件联合备份；本地文件成功不等于远端已交付。

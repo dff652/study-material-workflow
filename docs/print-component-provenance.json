@@ -1,0 +1,31 @@
+{
+  "source_checkpoint": "ecd33622f9ed359e3b245446a1285326e02e1837",
+  "scope": "pure print components only; copied before local adaptations",
+  "files": [
+    {
+      "component": "contracts.py",
+      "sha256": "cefe5e92636cd77538e30e69fa2f777a3059dcdd044893e9fd6a680c3f90d6f5",
+      "upstream": "study-workbench/app/exports/contracts.py"
+    },
+    {
+      "component": "renderer.py",
+      "sha256": "b260d3d53637dc08a552d49df41429695a21e1c46cf34f37c6e6d38882809f54",
+      "upstream": "study-workbench/app/exports/renderer.py"
+    },
+    {
+      "component": "fonts.py",
+      "sha256": "5c2b31f947bcec1cf18e45e3b3aa7d4656970ee2be16261084ee6c30b0dd8f47",
+      "upstream": "study-workbench/app/exports/fonts.py"
+    },
+    {
+      "component": "math.py",
+      "sha256": "dedf2061f9e85c3509fe0efe5756a24b191d7885ddeb862ab01f3f13280a6a1b",
+      "upstream": "study-workbench/app/exports/math.py"
+    },
+    {
+      "component": "rich.py",
+      "sha256": "a676e222fd54c5a1e63cdbedd93b9f7800afc984b825c5a2c20d030bd1e12188",
+      "upstream": "study-workbench/app/exports/rich.py"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "profile_id": "calculation-v1",
+  "namespace": "calculation",
+  "classification_revision": "calculation-six-methods-v1",
+  "books": [
+    "J1",
+    "J2",
+    "W1",
+    "W2",
+    "W3",
+    "W4"
+  ],
+  "photo_separator": "/",
+  "allow_sides": false,
+  "groups": {
+    "1": "基础变形与换元",
+    "2": "公式与通项",
+    "3": "分数裂项",
+    "4": "整数裂项",
+    "5": "比较与估算",
+    "6": "方程与新定义"
+  },
+  "aux_aliases": {}
+}

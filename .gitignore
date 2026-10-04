@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+data/
+artifacts/
+outputs/
+*.local.json
+*.local.csv
+credentials*
+.env
+.env.*

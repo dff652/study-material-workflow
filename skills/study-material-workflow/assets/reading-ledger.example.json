@@ -1,0 +1,17 @@
+{
+  "schema_version": "swf.reading-example.v1",
+  "purpose": "manual evidence template; not a Workbench import contract",
+  "batch_id": "replace-with-batch-id",
+  "pages": [{
+    "source_id": "replace-with-real-source-id",
+    "source_sha256": "replace-with-real-sha256",
+    "reading_state": "not_tested",
+    "printed_content": {"state": "draft", "text": null},
+    "regions": [],
+    "region_gap": "exact_region_missing",
+    "observations": [{"visible_fact": null, "author_state": "unknown", "author_id": null, "occurred_at": null, "help_state": "unknown"}],
+    "errata": [],
+    "questions_checked": [],
+    "gaps": ["not_read"]
+  }]
+}
