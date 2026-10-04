@@ -29,10 +29,12 @@ GitHub 公开仓库承载可复用 SOP skill 和源码。本地家庭输入与�
 4. 主代理复核最终新增的报告／文档、完整历史边界、`git diff --check`、干净工作树和 origin URL，再统一 `git push --set-upstream origin main`。不 force push、不创建无关分支／tag，也不上传 artifacts。
 5. 读取 GitHub 可见性及默认分支，比较远端 main 与本地 HEAD 的完整 SHA；一致后记录本地 receipt 并报告 push 成功。远端检查失败时继续核实，不能以本地 commit 或命令发出推断上传完成。
 
-本次没有 CI workflow、GitHub Release、安装、插件市场发布或应用部署。后续可增加匿名 CI、新真实小批次阅读验收及实际 Office 检查；它们不被首次源码上传自动计为已完成。
+首次公开提交阶段没有 CI workflow、GitHub Release、安装、插件市场发布或应用部署。后续匿名 CI 属于任务 SWF-12，真实小批次及 Office 属于 SWF-13／14，状态分别记录；它们不被首次源码上传自动计为已完成。
 
 ## 状态与证据
 
 仓库创建和 origin 已实际确认；文档提交为 `3198db0`，独立 review 已通过，详见[审查报告](review-20261004.md)。该报告覆盖首次实现及完整两项提交，不改变家庭与生产能力未验状态。审查之后仅补充报告和文档状态，由主代理复核差异、实现一致及完整历史，再统一 push。
 
 最终远端 SHA／可见性 receipt 保存于忽略的 `data/github-publication.local.json`；公开首发记录直接查看 [main 提交历史](https://github.com/dff652/study-material-workflow/commits/main/)。从后续会话继续时，核对 GitHub main 与本地 git 状态，不依赖旧聊天或尚未执行的计划。
+
+首次统一 push 已完成：最终提交 `1133550cd2cf2768e2bb5effa0aaf9a6647247d7`，GitHub API 与匿名 git ls-remote 均与本地一致，远端完整树为 66 个文件，私有目录未上传，匿名读取 README 与本地字节一致。main 跟踪 origin/main，首发核验时 ahead=0、behind=0、工作树干净。本段是该次首发快照，后续提交以实时 Git 状态为准。

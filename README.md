@@ -35,6 +35,19 @@ SCRIPTS="$PWD/skills/study-material-workflow/scripts"
 
 `run.json` 保存当前阶段和待审项，`versions/摘要/` 保存不可覆盖成果；`status` 先核对全部依赖，`verify` 产生机器证据。人工 review 必须绑定 packet 与最终 recipe，所有页和新编答案均需核对。Word XML／OMML 校验不代表实际 Office 客户端分页通过。
 
+## 匿名 CI 与干净环境复现
+
+准备好 Python 3.12、固定依赖、Poppler、Noto SC 与 DejaVu 字体后，从任意目录运行：
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 "$PYTHON" /path/to/study-material-workflow/tools/ci_check.py \
+  --output-root /path/to/new-or-empty/anonymous-ci
+```
+
+入口核对环境，严格运行全部测试，再生成两张合成来源、五册和五页预览，并验证重复运行复用已验成果。零测试、跳过、失败、错误、预期失败或意外通过均不能通过门禁。输出目录必须不存在或为空；已有证据保留，重跑时换新目录。退出码与 `summary.json`、`environment.json`、`tests.log` 保存本次实际结果。
+
+[复现说明](docs/ci-reproduction.md)包含无宿主挂载的 Ubuntu 容器流程和验收边界；[CI workflow](.github/workflows/ci.yml)在 GitHub 临时 runner 执行相同入口。正式远端结果查看 [Actions](https://github.com/dff652/study-material-workflow/actions/workflows/ci.yml)，本机通过不能代替远端运行。
+
 ## 工具与接入
 
 | 入口 | 实际职责 |
@@ -53,7 +66,7 @@ SCRIPTS="$PWD/skills/study-material-workflow/scripts"
 
 ## 文档与验收
 
-- [任务清单](docs/tasks.md)：SWF-00～10 的实际范围与状态。
+- [任务清单](docs/tasks.md)：SWF-00～15 的实际范围与状态。
 - [SOP 对照](docs/sop-mapping.md)：会话决策、十阶段、重要勘误与不遗漏的边界。
 - [实施方案](docs/implementation-plan.md)、[验收方案](docs/acceptance-plan.md)：职责和签收要求。
 - [工作流契约](docs/workflow-contract.md)、[Luna6 交接](docs/luna6-task-brief.md)、[打印组件来源](docs/print-component-provenance.json)。

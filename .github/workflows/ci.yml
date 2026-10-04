@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - 'codex/**'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install anonymous runner rendering tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y poppler-utils fonts-noto-cjk fonts-dejavu-core
+
+      - name: Install pinned project dependencies
+        run: |
+          python -m pip install --requirement requirements.txt
+          python -m pip check
+
+      - name: Run portable CI validation
+        id: validate
+        run: |
+          set +e
+          python tools/ci_check.py --output-root data/ci
+          result=$?
+          if [ -f data/ci/summary.json ] && [ -f data/ci/environment.json ] && [ -f data/ci/tests.log ]; then
+            echo "evidence_ready=true" >> "$GITHUB_OUTPUT"
+          fi
+          exit "$result"
+
+      - name: Upload anonymous CI evidence
+        if: always() && steps.validate.outputs.evidence_ready == 'true'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: anonymous-ci-evidence
+          path: |
+            data/ci/summary.json
+            data/ci/environment.json
+            data/ci/tests.log
+            data/ci/demo/
+          if-no-files-found: ignore
+          retention-days: 7
