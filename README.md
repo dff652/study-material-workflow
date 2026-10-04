@@ -64,6 +64,8 @@ PYTHONDONTWRITEBYTECODE=1 "$PYTHON" /path/to/study-material-workflow/tools/ci_ch
 
 当前 skill 源码位于项目内，不改用户全局配置。新会话可先读入口文件，再明确“使用 study-material-workflow 按保存批次继续”；项目发现入口、包及验收状态见 [DEV_STATE](DEV_STATE.md)。
 
+计算、几何和数论使用各自的专题参考及 profile。Codex CLI 新会话的自动匹配、普通数学不触发及保存阶段继续已实测；真实数论小批次 3 图／8 大题／12 条目生成五册 18 页，机器、数学与全页代理审查通过。PC／macOS Word 实开仍待回填，见[本轮验收](docs/session-and-holdout-acceptance.md)和[两端 Word SOP](docs/word-client-acceptance.md)。
+
 ## 文档与验收
 
 - [任务清单](docs/tasks.md)：SWF-00～15 的实际范围与状态。

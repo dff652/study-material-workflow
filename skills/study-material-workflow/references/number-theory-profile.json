@@ -1,0 +1,17 @@
+{
+  "profile_id": "number-theory-v1",
+  "namespace": "number-theory",
+  "classification_revision": "number-theory-six-methods-v1",
+  "books": ["W10", "W11", "W12", "W13", "W14", "J5", "J6"],
+  "photo_separator": "/",
+  "allow_sides": false,
+  "groups": {
+    "1": "因数、倍数与质合数",
+    "2": "质因数分解与约数",
+    "3": "公因数、公倍数与周期",
+    "4": "整除判定与数字结构",
+    "5": "余数与同余",
+    "6": "分类计数与综合推理"
+  },
+  "aux_aliases": {}
+}

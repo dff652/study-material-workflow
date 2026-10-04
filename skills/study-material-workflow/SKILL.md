@@ -12,7 +12,7 @@ description: 将讲义、练习册照片或已核对的题目草稿整理成有�
 1. 读取既有 `run.json` 或批次清单；核对原始文件、输入版本和缺口，不依赖前次聊天记忆。没有清单时让调用方显式列选定文件及书册／页序，不扫描无关目录。
 2. 用 `scripts/check_environment.py` 检查实际 Python、打印依赖、字体和图转工具。缺能力应报告具体缺口，不安装、不改服务。指令中的 `PYTHON` 指当前已验证解释器，`SCRIPTS` 指本 skill 的 scripts 绝对目录。
 3. 首次来源与索引准备见 [references/workflow.md](references/workflow.md)。已有核对内容可从 packet 验证开始。程序只准备来源和校验结构，阅读、知识归纳、解析与新题编写由 agent／人工完成。
-4. 根据专题只读 [计算规则](references/calculation.md) 或 [几何规则](references/geometry.md)。先完整阅读每页，再核对题干、选项、图形条件、笔迹和理论栏；跨页按顺序合并，选项不重复计题。不清楚就记录缺口。
+4. 根据专题只读 [计算规则](references/calculation.md)、[几何规则](references/geometry.md) 或 [数论规则](references/number-theory.md)。先完整阅读每页，再核对题干、选项、图形条件、笔迹和理论栏；跨页按顺序合并，选项不重复计题。不清楚就记录缺口。
    页面阅读及观察可按 assets/reading-ledger.example.json 记录，带真实来源摘要；该示例不是正式题库导入格式。显示旋转／去笔迹／区域变换只写派生记录，原字节保留。
 5. 按 [内容与五册契约](references/content.md) 生成 `packet.json`；打印草稿、数学判断与独立掌握证据分别处理。未确认作者、时间、提示程度不转成孩子的错误或成功。
 6. 运行 render／verify，审查全部预览；发现问题只返工相关输入，重新生成并验证。签收要求见 [references/acceptance.md](references/acceptance.md)。仅首图或文件生成成功不构成验收。

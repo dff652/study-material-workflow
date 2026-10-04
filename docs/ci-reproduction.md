@@ -78,4 +78,10 @@ cat /evidence/anonymous-ci/summary.json
 
 独立 review 为 PASS，另从 `/tmp` 重跑 50 项测试，16.556 秒全部通过，并验证输出冲突／符号链接保留及 discovery 失败。详见 [CI 审查记录](review-ci-20261004.md)。本段是 push 前本地签收快照；正式 Actions／artifact 与 push 后的新 GitHub clone 由主代理继续核对，实时远端结果见上述 Actions，私有 receipt 位于 `data/ci-repro/`，不从本地通过推断远端通过。
 
+## 远端与新 clone 的实际签收
+
+`09a1ac579df8b9f875ac1e4e0a944c2ed620500c` 的 [Actions 运行](https://github.com/dff652/study-material-workflow/actions/runs/37196458612) conclusion=success：50 项测试，0 failures／errors／skips／expected failures／unexpected successes，匿名五册5页及重放通过。runner 为 Python 3.12.14；下载 artifact 的全文件集合、大小、SHA、配方摘要、PDF／预览和 DOCX XML 结构核对通过。
+
+主代理随后在无宿主挂载的临时 Ubuntu 容器中匿名 clone public GitHub 的同一 HEAD，以 Python 3.12.3 的独立 venv 运行50项测试及匿名成果／重放，全部通过，容器已清理。宿主验证 CI 原成果时，正式配方核对因 Python patch 与 runner 不同而明确拒绝；没有放宽验证器、假报正式复验或执行生产发布。结构／字节独立检查与配方可重验分别记录。后续提交的正式远端状态需绑定其自身 HEAD，不能沿用此基线的 success。
+
 完成本轮不会自动完成 SWF-13～15：新真实照片的完整阅读和数学／逐页审核、Word 客户端实开、新会话 Skill 路由、Workbench／NAS 正式接入仍需各自输入与执行证据。公开记录保留聚合结果，本地原始日志和成果在忽略的 data/、artifacts/。
