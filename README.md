@@ -1,6 +1,6 @@
 # Study Material Workflow
 
-离线学习资料整理 skill。将明确选定的讲义／练习册照片或已核对草稿整理成知识总结、分类索引、证据记录、无提示复测和家长答案，使用同一内容快照生成 PDF 与 Word。
+离线学习资料整理 skill。将明确选定的讲义／练习册照片或已核对草稿整理成逐题解题思路文档，或知识总结、分类索引、证据记录、无提示复测和家长答案五册，使用同一内容快照生成 PDF 与 Word。
 
 GitHub public 仓库：[dff652/study-material-workflow](https://github.com/dff652/study-material-workflow)，默认分支 `main`。仓库保存可复用工具与匿名示例，家庭来源、档案和生成成果留在本机私有工作区；公开范围和首发检查见[GitHub 仓库记录](docs/github-publication.md)。
 
@@ -35,6 +35,22 @@ SCRIPTS="$PWD/skills/study-material-workflow/scripts"
 
 `run.json` 保存当前阶段和待审项，`versions/摘要/` 保存不可覆盖成果；`status` 先核对全部依赖，`verify` 产生机器证据。人工 review 必须绑定 packet 与最终 recipe，所有页和新编答案均需核对。Word XML／OMML 校验不代表实际 Office 客户端分页通过。
 
+明确要求“讲义每道题的解题思路单独整理”时，按 [逐题解析SOP](skills/study-material-workflow/references/solution-companion.md) 使用独立CLI，提供所需逐题、分讲或汇总Word／PDF。该模式含答案，用途为parent_answers；读取、解题与审核由agent／人工负责。输入、审核与继续行为见 [逐题契约](docs/solution-companion-contract.md)，实现和验收状态见 [开发补充](docs/solution-companion-development.md)。
+
+逐题解析默认区分本讲与其他方法，优先本讲知识并注明额外方法来源；优化编写规则见 [解法选择与编写](skills/study-material-workflow/references/solution-methods.md)。当前几何／计算附册的修订、验收与私有继续入口见 [方法与边界复核](docs/lecture-methods-and-boundary-review.md)及 [新会话起点](docs/new-session-start.md)。
+
+在新的私有目录体验匿名逐题流程：
+
+```bash
+"$PYTHON" "$SCRIPTS/solution_companion/make_demo.py" \
+  --output-root "$PWD/data/companion-anonymous-demo" \
+  --font-config "$PWD/skills/study-material-workflow/assets/font-config.example.json"
+"$PYTHON" "$SCRIPTS/solution_companion/cli.py" status \
+  --run "$PWD/data/companion-anonymous-demo/run/run.json"
+```
+
+演示包含两讲、三道编号题、四个叶子答案及跨页小问，交付组织可分别选格式。所有底层文档仍生成PDF／DOCX，最终delivery和ZIP只含所选格式。run按输入和工具摘要继续；真实Word实开与家庭批准保持独立待验。
+
 ## 匿名 CI 与干净环境复现
 
 准备好 Python 3.12、固定依赖、Poppler、Noto SC 与 DejaVu 字体后，从任意目录运行：
@@ -54,8 +70,10 @@ PYTHONDONTWRITEBYTECODE=1 "$PYTHON" /path/to/study-material-workflow/tools/ci_ch
 | --- | --- |
 | collect_sources / adapt_catalog | 选定原图真实解码、hash、数量、稳定身份、跨页与父子、原 raw／未知保留 |
 | exact_math / diagrams | 有界有理数计算；可追溯矢量 PDF／PNG 场景，不能代替证明 |
+| print_backend | 已审查的底层PDF／Word打印组件，供五册及逐题配套文档复用；调用方负责来源、审核和不可覆盖输出 |
 | import_legacy_packet | 只读历史 JSON，保存快照和图示来源，不执行历史 Python |
 | render_packet / verify_packet | 五册 PDF／Word／全页预览、字体与资源、严格集合和结构校验 |
+| solution_companion/cli | 已编写逐题内容的render／status／verify／draft bundle；多组织及混合格式、不可覆盖版本、来源及审核绑定；不自动解题或发布 |
 | workflow | 准备、生成、继续检查、失效和失败记录，历史结果保留 |
 | bundle_packet | 已验成果及可选配对输入快照的 ZIP，全成员字节、CRC、外部 checksum，不自动发布 |
 | export_workbench | 经指定版本纯转换器输出私有 bundle，不访问数据库 |
@@ -68,7 +86,11 @@ PYTHONDONTWRITEBYTECODE=1 "$PYTHON" /path/to/study-material-workflow/tools/ci_ch
 
 ## 文档与验收
 
-- [任务清单](docs/tasks.md)：SWF-00～15 的实际范围与状态。
+- [任务清单](docs/tasks.md)：SWF-00～16 的实际范围与状态。
+- [新会话起点](docs/new-session-start.md)：读取顺序、当前有效版本与接续验收；完整私有证据位置见本机交接。
+- [2026-10-05 接续验收](docs/continuous-acceptance-20261005.md)：三批版本边界、76项回归证据及110项待实测Word记录。
+- [逐题实现与文档本地 review](docs/review-solution-companion-20261005.md)：候选范围、独立审查、提交检查和手动push边界。
+- [逐题解析SOP](skills/study-material-workflow/references/solution-companion.md)与 [开发补充](docs/solution-companion-development.md)：生成解题思路文档、验收与后续通用工具计划。
 - [SOP 对照](docs/sop-mapping.md)：会话决策、十阶段、重要勘误与不遗漏的边界。
 - [实施方案](docs/implementation-plan.md)、[验收方案](docs/acceptance-plan.md)：职责和签收要求。
 - [工作流契约](docs/workflow-contract.md)、[Luna6 交接](docs/luna6-task-brief.md)、[打印组件来源](docs/print-component-provenance.json)。
