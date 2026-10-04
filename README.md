@@ -2,6 +2,8 @@
 
 离线学习资料整理 skill。将明确选定的讲义／练习册照片或已核对草稿整理成知识总结、分类索引、证据记录、无提示复测和家长答案，使用同一内容快照生成 PDF 与 Word。
 
+GitHub public 仓库：[dff652/study-material-workflow](https://github.com/dff652/study-material-workflow)，默认分支 `main`。仓库保存可复用工具与匿名示例，家庭来源、档案和生成成果留在本机私有工作区；公开范围和首发检查见[GitHub 仓库记录](docs/github-publication.md)。
+
 阅读、知识归纳、解题和评价由 agent／人工负责；工具负责来源、结构、精确算术、图示、渲染、版本、验证与交付。已有分类目录仍有完整题干、逐题区域和独立性缺口，不能自动成为已审核题库。
 
 ## 开始使用
@@ -59,4 +61,4 @@ SCRIPTS="$PWD/skills/study-material-workflow/scripts"
 
 测试命令：`PYTHONDONTWRITEBYTECODE=1 "$PYTHON" -m unittest discover -s tests -v`。公开测试仅含合成来源；家庭照片、档案、完整历史内容和凭据不进入 Git 或通用 skill 包。真实 OCR、手机／家庭复测、数据库迁移、生产 NAS 发布和部署需要对应范围和实际证据。
 
-本轮只做本地提交，后续统一由用户手动 push。
+本地首次实现提交为 `2bac24a`。本次先更新文档和提交，再独立 review，修正并记录结果后统一 push；后续提交、发布与部署仍按对应任务授权执行。

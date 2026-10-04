@@ -4,11 +4,12 @@
 
 ## 本次范围
 
-用户已要求按顺序完成并在中途持续推进，后续统一手动 push。本轮完成离线 v1 skill、工具、测试、案例回归和主代理审查；只做本地提交。实际状态见[最终验收记录](docs/verification-20261004.md)。
+离线 v1 已完成 skill、工具、测试、案例回归和主代理审查，首次本地提交为 `2bac24a`。用户随后授权创建 public GitHub 仓库，更新项目文档并提交，再 review，最后统一 push。此前“留待手动 push”是上一阶段的范围，本次以最新授权执行。离线验收见[最终验收记录](docs/verification-20261004.md)，远程首发见[仓库记录](docs/github-publication.md)。
 
 ## 已完成与基线
 
-- 独立 Git 项目，分支 `codex/workflow-v1`；没有配置远端或执行 push。未安装依赖、启用模型 API、改生产 NAS、迁移数据库或变更服务。
+- 独立 Git 项目，初始开发分支 `codex/workflow-v1` 已改名为默认分支 `main`，没有重写 `2bac24a`。public 仓库为 `dff652/study-material-workflow`，origin 的 fetch／push URL 均为 `https://github.com/dff652/study-material-workflow.git`。首次上传安排在独立审查通过之后。
+- GitHub 源码公开与资料／应用部署分别记录；本次未安装依赖、启用模型 API、改生产 NAS、迁移数据库或变更服务。
 - 输入为会话计算／几何五册、SWB-SOP-IMG-001 v1.0 四册流程资料及现有纯打印源码；来源摘要和真实资料只在忽略的 data/ 内。
 - SWF-00～07 的离线实现和主代理验收完成；一个 luna6-worker 分两轮负责来源／索引及 render／verify，主代理审查全部实际修改，负责共享契约、知识边界、集成、恢复及最终检查。
 - 41 项测试全部通过。计算 23 图／61 大题／81 条目／91 节点，五册 29 页；几何 33 图／73 大题／77 条目／80 节点，五册 35 页；匿名新批次 2 图、五册 5 页。69 页均完成主代理视觉复核，16 个历史诊断答案另用有理数与坐标方法复算。
