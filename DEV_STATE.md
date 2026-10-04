@@ -6,7 +6,7 @@
 
 离线 v1 已完成 skill、工具、测试、案例回归和主代理审查，首次本地提交为 `2bac24a`。用户随后授权创建 public GitHub 仓库，更新项目文档并提交，再 review，最后统一 push。此前“留待手动 push”是上一阶段的范围，本次以最新授权执行。离线验收见[最终验收记录](docs/verification-20261004.md)，远程首发见[仓库记录](docs/github-publication.md)。
 
-本轮推进 v1.1 的 SWF-12：匿名 CI 与干净环境复现。一个 luna6-worker 拥有 `.github/workflows/ci.yml`、`tools/ci_check.py`、`tests/test_ci_check.py`；主代理负责范围、隔离容器、文档、完整 diff 审查、独立验证与最后统一 push。新真实照片及 Word 目标客户端仍需确定，不把这些待验项自动批准。
+本轮 v1.1 的 SWF-12 已完成实现和本地签收：一个 luna6-worker 负责 `.github/workflows/ci.yml`、`tools/ci_check.py`、`tests/test_ci_check.py`；主代理完成完整 diff 审查、无挂载容器复现及文档，独立 verifier 为 PASS。统一 push 与远端运行通过实际 SHA／Actions 核对。新真实照片及 Word 目标客户端仍需确定，不把这些待验项计为完成。
 
 ## 已完成与基线
 
@@ -27,4 +27,6 @@
 
 家庭成果保持 `legacy_unreviewed`，运行记录为 `machine_verified`：主代理检查排版和诊断答案，不替代原题全文再转录、家庭内容批准或实际 Word 客户端验收。新的真实家庭保留集、Word 实开、业务联合恢复和生产接入见任务表未验项。
 
-SWF-12 环境准备只在临时 Ubuntu 容器及 GitHub runner 内安装依赖；容器使用独立 venv，runner 使用 setup-python 提供的 Python。不安装到宿主 Python，不挂载家庭目录。验收状态待实际执行及独立 review 后更新；现有 41 项／69 页是 v1 历史结果，不能替代本轮检查。入口和复现步骤见 [ci-reproduction](docs/ci-reproduction.md)。
+SWF-12 环境准备只在临时 Ubuntu 容器及 GitHub runner 内安装依赖；容器使用独立 venv，runner 使用 setup-python 提供的 Python。不安装到宿主 Python，不挂载家庭目录。候选 `58b1e7e` 在新 venv 完整通过 50 项测试、匿名两图／五册／五页及重放，独立复跑同样通过；见 [复现说明](docs/ci-reproduction.md)和 [CI 独立审查](docs/review-ci-20261004.md)。现有 41 项／69 页是 v1 历史结果。此文件保存 push 前本地签收快照，远端对应最终 HEAD 的实际 conclusion 以 GitHub Actions 和私有 `data/ci-repro/` receipt 为准。
+
+下一阶段 SWF-13／14 需要新照片路径与目标 Word 客户端／设备；在实际读取、审核和实开之前保留未验。SWF-15 依赖相应批次与明确的 Workbench／NAS 接入范围。

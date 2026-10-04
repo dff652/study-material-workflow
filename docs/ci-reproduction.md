@@ -72,6 +72,10 @@ cat /evidence/anonymous-ci/summary.json
 
 ## 本轮记录与后续
 
-实施中。主代理已从 public GitHub 匿名 clone 基线 `1133550cd2cf2768e2bb5effa0aaf9a6647247d7`，在无挂载 Ubuntu 容器的新 venv 中完成依赖安装、pip check 和两图／五册／五页机器验证。候选实现严格门禁审查发现 expectedFailure 状态可能误报，通过真实 unittest 结果复现后修正；完整候选检查和独立 review 待记录。
+主代理从 public GitHub 匿名 clone 基线 `1133550cd2cf2768e2bb5effa0aaf9a6647247d7`，在无挂载 Ubuntu 容器的新 venv 中完成依赖安装、pip check 和两图／五册／五页机器验证。模块来源均在 venv，user site 禁用。候选实现的严格门禁审查发现 expectedFailure 状态可能误报，真实结果复现后修正；完整入口另发现正常 discovery 的 None 状态无法写摘要，新增入口回归检查后修正，失败目录保留。
+
+本地候选 `58b1e7ede41a80c13775acf44ed8fc4f9187968f` 通过完整入口：50 项测试全部通过，failures／errors／skipped／expected_failures／unexpected_successes 均为 0；匿名 2 图、5 册、5 页验证通过，重放复用成立。验证从 `/tmp` 启动，源码由公开基线加本地候选 bundle 取得，尚不能称为该新提交已在 GitHub clone。
+
+独立 review 为 PASS，另从 `/tmp` 重跑 50 项测试，16.556 秒全部通过，并验证输出冲突／符号链接保留及 discovery 失败。详见 [CI 审查记录](review-ci-20261004.md)。本段是 push 前本地签收快照；正式 Actions／artifact 与 push 后的新 GitHub clone 由主代理继续核对，实时远端结果见上述 Actions，私有 receipt 位于 `data/ci-repro/`，不从本地通过推断远端通过。
 
 完成本轮不会自动完成 SWF-13～15：新真实照片的完整阅读和数学／逐页审核、Word 客户端实开、新会话 Skill 路由、Workbench／NAS 正式接入仍需各自输入与执行证据。公开记录保留聚合结果，本地原始日志和成果在忽略的 data/、artifacts/。
