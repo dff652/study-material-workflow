@@ -75,6 +75,7 @@ PYTHONDONTWRITEBYTECODE=1 "$PYTHON" /path/to/study-material-workflow/tools/ci_ch
 - [离线 v1 验收记录](docs/verification-20261004.md)：41 项测试、16 个诊断答案复算及 69 页视觉复核；私有输入／成果位于忽略的 data/ 和 artifacts/。
 - [首次公开提交独立审查](docs/review-20261004.md)：完整待上传实现和历史审查 PASS；独立重跑 41 项测试通过。
 - [CI 独立审查](docs/review-ci-20261004.md)：严格入口和隔离复现候选 PASS，独立重跑 50 项测试；正式远端结果见 Actions。
+- [真实小批次及新会话独立审查](docs/review-holdout-20261004.md)：保留 v2 FAIL 与订正历史，v3 复审 PASS；两端 Word 实开仍未验。
 
 测试命令：`PYTHONDONTWRITEBYTECODE=1 "$PYTHON" -m unittest discover -s tests -v`。公开测试仅含合成来源；家庭照片、档案、完整历史内容和凭据不进入 Git 或通用 skill 包。真实 OCR、手机／家庭复测、数据库迁移、生产 NAS 发布和部署需要对应范围和实际证据。
 

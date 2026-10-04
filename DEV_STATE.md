@@ -10,6 +10,8 @@
 
 当前批次和行为验收见 [session-and-holdout-acceptance](docs/session-and-holdout-acceptance.md)，两端 Word 接续见 [word-client-acceptance](docs/word-client-acceptance.md)，任务状态见 [tasks](docs/tasks.md)。
 
+本轮独立复审覆盖候选 15774fe 和当前私有 v3，结论 PASS；首轮 v2 FAIL 及旧签收撤销保留。50 项独立回归、匿名重放、四个 CLI 新会话和 v3 全部18页及交接包均有证据，见 [本轮 review](docs/review-holdout-20261004.md)。该结论属于 push 前签收，最终远端 SHA 与新 Actions 仍须实际核对。
+
 ## 已核对基线
 
 - 独立 Git 项目，public [dff652/study-material-workflow](https://github.com/dff652/study-material-workflow)，默认 main。用户追加授权文档提交→独立 review→统一 push，取代前一阶段留待手动 push 的范围；不授权生产发布。首次实现 2bac24a，首发文档 3198db0，首发验收 1133550，未重写历史。
